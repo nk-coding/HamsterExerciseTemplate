@@ -1,6 +1,10 @@
 package de.unistuttgart.iste.rss.oo.hamstersimulator.exercise00.homework;
 
+import de.unistuttgart.iste.rss.oo.hamstersimulator.exceptions.FrontBlockedException;
 import de.unistuttgart.iste.rss.oo.hamstersimulator.external.model.SimpleHamsterGame;
+import de.unistuttgart.iste.rss.oo.hamstersimulator.server.http.client.HamsterClient;
+import de.unistuttgart.iste.rss.oo.hamstersimulator.ui.javafx.JavaFXInputInterface;
+import de.unistuttgart.iste.rss.oo.hamstersimulator.ui.javafx.JavaFXUI;
 
 
 /**
@@ -15,11 +19,14 @@ public class TemplateHamsterGame extends SimpleHamsterGame {
     @Override
     protected void run() {
         this.loadTerritoryFromResourceFile("/territories/territoryExample00.ter");
-        this.displayInNewGameWindow();
+        //this.displayInNewGameWindow();
+        JavaFXUI.displayInNewGameWindow(game.getModelViewAdapter());
+        HamsterClient.startAndConnectToServer(game.getModelViewAdapter());
         game.startGame();
 
-        // simple example program
-        for (int i = 0; i < 4; i++) {
+        //paule.move();
+        //game.getModelViewAdapter().getGameController().abortOrStopGame();
+        for (int i = 0; i < 10; i++) {
             while (paule.frontIsClear()) {
                 paule.move();
             }
