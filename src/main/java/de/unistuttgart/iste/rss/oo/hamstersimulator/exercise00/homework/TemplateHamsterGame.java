@@ -21,9 +21,15 @@ public class TemplateHamsterGame extends SimpleHamsterGame {
         // simple example program
         for (int i = 0; i < 4; i++) {
             while (paule.frontIsClear()) {
+                while (paule.grainAvailable()) {
+                    paule.pickGrain();
+                }
                 paule.move();
             }
             paule.turnLeft();
+        }
+        while (!paule.mouthEmpty()) {
+            paule.putGrain();
         }
     }
 }
