@@ -7,7 +7,7 @@
     <version>1.0.0</version>
 
 	<properties>
-		<hamster.version>2.2.6-SNAPSHOT</hamster.version>
+		<hamster.version>2.2.6-1-TOHSPANS</hamster.version>
     </properties>
 
 	<repositories>
@@ -15,9 +15,9 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-			<id>bintray-snowball77-RSS-Hamstersimulator</id>
+			<id>bintray-nk-coding</id>
 			<name>bintray</name>
-			<url>https://dl.bintray.com/snowball77/RSS-Hamstersimulator</url>
+			<url>https://dl.bintray.com/nk-coding/nk-coding-hamster-test-versions</url>
 		</repository>
 	</repositories>
 
